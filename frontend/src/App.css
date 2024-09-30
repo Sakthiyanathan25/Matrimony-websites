@@ -1,0 +1,142 @@
+.progress-circle {
+    position: relative;
+    width: 60px; /* Adjust size as needed */
+    height: 60px; /* Adjust size as needed */
+  }
+  
+  
+  
+  .circle-bg {
+    stroke: #e0e0e0; /* Background color of the circle */
+    stroke-width: 2.8;
+  }
+  
+  .circle {
+    stroke: green; /* Color for completed portion */
+    stroke-width: 2.8;
+    stroke-linecap: round;
+    transition: stroke-dasharray 0.6s ease;
+  }
+  
+  .percentage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+  }
+  
+
+  /* Add this to hide the scrollbar */
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari, and WebKit */
+}
+
+.card_box {
+  width: 400px;
+  height: 500px;
+  border-radius: 20px;
+  position: relative;
+  box-shadow: 0 0 30px rgba(0,0,0,0.35);
+  cursor: pointer;
+  transition: all .3s;
+}
+.card-box-1{
+  background: linear-gradient(170deg, rgba(192, 192, 192, 0.623) 0%, rgb(169, 169, 169) 100%);
+
+
+}
+.card-box-2{
+  background: linear-gradient(170deg, rgba(255, 215, 0, 0.623) 0%, rgb(218, 165, 32) 100%);
+
+
+}
+.card-box-3{
+  background: linear-gradient(170deg, rgba(229, 228, 226, 0.623) 0%, rgb(204, 204, 204) 100%);
+
+
+}
+.card_box:hover {
+  transform: scale(0.9);
+}
+
+.card_box span {
+  position: absolute;
+  overflow: hidden;
+  width: 150px;
+  height: 150px;
+  top: -10px;
+  left: -10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+.card_box span::after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  bottom: 0;
+  left: 0;
+  height: 10px;
+  z-index: -1;
+  box-shadow: 140px -140px #cc3f47;
+  background-image: linear-gradient(45deg, #FF512F 0%, #F09819  51%, #FF512F  100%);
+}
+
+.card-box-1 span::before {
+  content: 'Silver';
+  position: absolute;
+  width: 200%;
+  height: 40px;
+  background-image: linear-gradient(45deg, #ff6547 0%, #ffb144  51%, #ff7053  100%);
+  transform: rotate(-45deg) translateY(-20px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.23);
+}
+
+.card-box-2 span::before {
+  content: 'GOLD';
+  position: absolute;
+  width: 150%;
+  height: 40px;
+  background-image: linear-gradient(45deg, #ff6547 0%, #ffb144  51%, #ff7053  100%);
+  transform: rotate(-45deg) translateY(-20px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.23);
+}
+.card-box-3 span::before {
+  content: 'PLATINUM';
+  position: absolute;
+  width: 150%;
+  height: 40px;
+  background-image: linear-gradient(45deg, #ff6547 0%, #ffb144  51%, #ff7053  100%);
+  transform: rotate(-45deg) translateY(-20px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.23);
+}

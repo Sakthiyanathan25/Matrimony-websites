@@ -1,0 +1,76 @@
+<div
+ className={`relative h-screen outline-none rounded-r-lg bg-[#]  ${isSideBarOpen ? "w-[300px]" : "w-[100px]"} transition-all duration-[500ms] ease-in-out`} >
+                <ul
+                    tabIndex="0"
+                    ref={myRef}
+                    onFocus={handleFocus}
+                    onBlur={handleBlur}
+                    className="relative flex flex-col justify-center items-center h-full gap-y-20 font-jost text-xl p-5"
+                >
+                    <li className="absolute z-10 top-5 right-7  text-black">
+                        {!isSideBarOpen ? (
+                            <TfiMenu onClick={handleFocus} className="text-4xl cursor-pointer" aria-label="Open menu" />
+                        ) : (
+                            <IoIosClose onClick={handleBlur} className="text-5xl cursor-pointer" aria-label="Close menu" />
+                        )}
+                    </li>
+                    {menuItems.map((item, index) => (
+                        <li key={index} className="flex justify-center items-center w-full">
+                            <h1
+                                className={`${isSideBarOpen ? "opacity-100 translate-x-0 " : "opacity-0 translate-x-[-100px]"} w-[70%] transition-all duration-[600ms] ease-in-out text-[#F4F2F2] font-bold text-xl text-center`}
+                            >
+                                {item.label}
+                            </h1>
+                            <div
+                                className={`w-1/2 text-center text-[#0c0c0c] ${!isSideBarOpen ? "-translate-x-5" : "translate-x-0"} transition-all duration-[600ms] ease-in-out`}
+                            >
+                                {item.icon}
+                            </div>
+                        </li>
+                    ))}
+                </ul>
+</div>
+
+import { useState, useEffect, useRef } from "react";
+import { FaHome } from "react-icons/fa";
+import { IoSettings } from "react-icons/io5";
+import { TbEdit } from "react-icons/tb";
+import { TfiMenu } from "react-icons/tfi";
+import { IoIosClose } from "react-icons/io";
+import Navbar from "../components/Navbar";
+
+export default function Home() {
+    const [isSideBarOpen, setIsSideBarOpen] = useState(false);
+    const myRef = useRef(null);
+
+    const handleFocus = () => {
+        setIsSideBarOpen(true);
+    };
+
+    const handleBlur = () => {
+        setIsSideBarOpen(false);
+    };
+
+    useEffect(() => {
+        if (myRef.current) {
+            myRef.current.focus();  // Focus on the element if needed
+        }
+    }, []);
+
+    const menuItems = [
+        { label: "Home", icon: <FaHome size={40} /> },
+        { label: "Profile", icon: <IoSettings size={40} /> },
+        { label: "Matches", icon: <IoSettings size={40} /> },
+        { label: "Settings", icon: <IoSettings size={40} /> },
+        { label: "Edit", icon: <TbEdit size={40} /> },
+    ];
+
+    return (
+        <div className="min-h-[100vh] ">
+
+         
+
+
+        </div>
+    );
+}
